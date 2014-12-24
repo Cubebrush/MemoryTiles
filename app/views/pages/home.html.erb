@@ -1,0 +1,19 @@
+<style>
+html {
+    	background: url('https://cubebrush.com/wp-content/uploads/2014/12/cubebrush/bgtiles.jpg');
+	 }
+</style>
+
+<div class="jumbotron center">
+	<h1>A mosaic to display your <br> precious moments.</h1>
+	<br>
+	<% if user_signed_in? %>
+	
+	<% else %>
+
+		<p>
+			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+		</p>
+	<% end %>
+</div>

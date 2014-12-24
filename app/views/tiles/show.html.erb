@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tile.description %>
+</p>
+
+<% if @tile.user == current_user %>
+	<%= link_to 'Edit', edit_tile_path(@tile) %> |
+<% end %>
+
+<%= link_to 'Back', tiles_path %>
