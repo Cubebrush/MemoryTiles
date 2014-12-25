@@ -19,6 +19,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk'
+gem 'nokogiri', '1.6.0'
 
 
 group :development, :test do
