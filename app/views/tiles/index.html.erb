@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Description</th>
       <th>user.email</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @tiles.each do |tile| %>
       <tr>
+        <td><%= image_tag tile.image.url(:medium) %></td>
         <td><%= tile.description %></td>
         <td><%= tile.user.email if tile.user %></td>
         <td><%= link_to 'Show', tile %></td>

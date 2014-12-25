@@ -54,6 +54,6 @@ class TilesController < ApplicationController
     end
 
     def tile_params
-      params.require(:tile).permit(:description)
+      params.require(:tile).permit(:description, :image)
     end
 end
