@@ -8,7 +8,8 @@ $text-color: 												#424a5b;
 $brand-primary: 											#40b3de;
 $jumbotron-bg: 												#ffffff;
 
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .center {
      text-align: center;

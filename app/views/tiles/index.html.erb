@@ -1,3 +1,5 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
 <div id="tiles" class="transitions-enabled">
   <% @tiles.each do |tile| %>
     <div class="box panel panel-default">
@@ -8,8 +10,13 @@
 
         <% if tile.user == current_user %>
           <div class:"actions">
-            <%= link_to 'Edit', edit_tile_path(tile) %>
-            <%= link_to 'Destroy', tile, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to edit_tile_path(tile) do %>
+                <span class="glyphicon glyphicon-edit"></span> Edit
+            <% end %>
+
+            <%= link_to tile, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                 <span class="glyphicon glyphicon-remove"></span> Delete
+            <% end %>
           </div>
         <% end %>
       </div>

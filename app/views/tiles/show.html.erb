@@ -20,7 +20,16 @@
         <p><strong><%= @tile.user.email if @tile.user %></strong></p>
 
         <% if @tile.user == current_user %>
-         <%= link_to 'Edit', edit_tile_path(@tile) %>
+        
+
+            <%= link_to edit_tile_path(@tile) do %>
+                <span class="glyphicon glyphicon-edit"></span> Edit
+            <% end %>
+
+            <%= link_to (@tile), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                 <span class="glyphicon glyphicon-remove"></span> Delete
+            <% end %>
+
         <% end %>
 
       </div>

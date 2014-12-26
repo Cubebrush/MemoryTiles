@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :tiles
   devise_for :users
-  root 'pages#home'
+  root 'tiles#index'
   get 'about' => 'pages#'
 
   # The priority is based upon order of creation: first created -> highest priority.
