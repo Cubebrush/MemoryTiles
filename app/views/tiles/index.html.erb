@@ -2,6 +2,21 @@
   <% @tiles.each do |tile| %>
     <div class="box panel panel-default">
       <%= link_to image_tag(tile.image.url), tile %>
+
+        <%= tile.description %><br>
+
+        <%= link_to 'Edit', edit_tile_path(tile) %>
+        <%= link_to 'Destroy', tile, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    </div>
+  <% end %>
+</div>
+
+
+<!-- <div id="tiles" class="transitions-enabled">
+  <% @tiles.each do |tile| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(tile.image.url), tile %>
       <div class="panel-body">
         <%= tile.description %><br>
         <b><%= tile.user.email if tile.user %></b>
@@ -15,4 +30,4 @@
       </div>
     </div>
   <% end %>
-</div>
+</div> -->

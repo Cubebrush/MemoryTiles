@@ -48,10 +48,10 @@ class TilesController < ApplicationController
       @tile = Tile.find(params[:id])
     end
 
-    def correct_user
-      @tile = current_user.tiles.find_by(id: params[:id])
-      redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
-    end
+    #def correct_user
+     #@tile = current_user.tiles.find_by(id: params[:id])
+     #redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
+    #end
 
     def tile_params
       params.require(:tile).permit(:description, :image)
