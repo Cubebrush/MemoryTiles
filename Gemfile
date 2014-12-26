@@ -24,6 +24,8 @@ gem 'aws-sdk'
 gem 'nokogiri', '1.6.5'
 gem 'masonry-rails', '~> 0.2.0'
 
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development, :test do
      gem 'sqlite3'
