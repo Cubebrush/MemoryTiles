@@ -1,14 +1,16 @@
 <div id="tiles" class="transitions-enabled">
   <% @tiles.each do |tile| %>
     <div class="box panel panel-default">
-      <%= image_tag tile.image.url(:medium) %>
+      <%= link_to image_tag(tile.image.url), tile %>
       <div class="panel-body">
-        <%= tile.description %>
-        <%= tile.user.email if tile.user %>
-        <%= link_to 'Show', tile_path(tile) %>
+        <%= tile.description %><br>
+        <b><%= tile.user.email if tile.user %></b>
+
         <% if tile.user == current_user %>
-          <%= link_to 'Edit', edit_tile_path(tile) %>
-          <%= link_to 'Destroy', tile, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class:"actions">
+            <%= link_to 'Edit', edit_tile_path(tile) %>
+            <%= link_to 'Destroy', tile, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
         <% end %>
       </div>
     </div>

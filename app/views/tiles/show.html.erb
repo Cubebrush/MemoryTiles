@@ -1,11 +1,29 @@
-<%= image_tag @tile.image.url(:medium) %>
-<p>
-  <strong>Description:</strong>
-  <%= @tile.description %>
-</p>
 
-<% if @tile.user == current_user %>
-	<%= link_to 'Edit', edit_tile_path(@tile) %> |
-<% end %>
 
 <%= link_to 'Back', tiles_path %>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+
+		<style>
+		img {
+			max-width: 100%;
+			max-height: 900px;
+		}
+		</style>
+
+        <%= image_tag @tile.image.url %>
+      </div>
+      <div class="panel-body">
+        <p><%= @tile.description %></p>
+        <p><strong><%= @tile.user.email if @tile.user %></strong></p>
+
+        <% if @tile.user == current_user %>
+         <%= link_to 'Edit', edit_tile_path(@tile) %>
+        <% end %>
+
+      </div>
+    </div>
+
+</div>
