@@ -1,7 +1,7 @@
 class TilesController < ApplicationController
   before_action :set_tile, only: [:show, :edit, :update, :destroy]
-  #before_action :correct_user, only: [:edit, :update, :destroy]
-  #before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   respond_to :html
 
@@ -48,10 +48,10 @@ class TilesController < ApplicationController
       @tile = Tile.find(params[:id])
     end
 
-    #def correct_user
-     #@tile = current_user.tiles.find_by(id: params[:id])
-     #redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
-    #end
+    def correct_user
+     @tile = current_user.tiles.find_by(id: params[:id])
+     redirect_to tiles_path, notice: "Not authorized to edit this tile" if @tile.nil?
+    end
 
     def tile_params
       params.require(:tile).permit(:description, :image)

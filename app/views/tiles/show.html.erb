@@ -19,9 +19,9 @@
         <p><%= @tile.description %></p>
         <p><strong><%= @tile.user.email if @tile.user %></strong></p>
 
-        <!-- <% if @tile.user == current_user %> -->
+        <% if @tile.user == current_user %>
          <%= link_to 'Edit', edit_tile_path(@tile) %>
-        <!-- <% end %> -->
+        <% end %>
 
       </div>
     </div>
