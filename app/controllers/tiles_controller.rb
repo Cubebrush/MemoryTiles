@@ -6,7 +6,7 @@ class TilesController < ApplicationController
   respond_to :html
 
   def index
-    @tiles = Tile.all
+    @tiles = Tile.all.order("created_at DESC").limit(20)
     respond_with(@tiles)
   end
 
